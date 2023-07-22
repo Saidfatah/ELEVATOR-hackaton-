@@ -10,14 +10,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-
-
 model Player {
-  id         Int     @id @default(autoincrement())
+  id         Int    @id @default(autoincrement())
   firstname  String
   lastname   String
   goal       Int
-  salary     Int
+  salary     BigInt
   devise     String
   pictureURL String
 }
