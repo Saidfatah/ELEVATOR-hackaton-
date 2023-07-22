@@ -1,7 +1,8 @@
 import PaginationControls from '@/components/PaginationControls';
 import PlayersList from '@/components/PlayersList'
 import prisma from "@/lib/prisma";
-import { Player } from '@prisma/client';
+import { Player } from '@/types';
+import { PlayerPayload } from '@prisma/client';
 
 const ITEMS_PER_PAGE = 6
 
@@ -18,7 +19,7 @@ export default async function Players({ params }: PlayersPropsType) {
     });
 
     // Convert the salary field from BigInt to number
-    const formattedPlayers = players.map((player: Player) => ({
+    const formattedPlayers = players.map((player: PlayerPayload["scalars"]) => ({
         ...player,
         salary: Number(player.salary),
     }));
