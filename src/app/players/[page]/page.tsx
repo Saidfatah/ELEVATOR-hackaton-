@@ -1,7 +1,6 @@
 import PaginationControls from '@/components/PaginationControls';
 import PlayersList from '@/components/PlayersList'
 import prisma from "@/lib/prisma";
-import { Player } from '@/types';
 import { PlayerPayload } from '@prisma/client';
 
 const ITEMS_PER_PAGE = 6
